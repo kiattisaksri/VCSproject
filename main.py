@@ -6,6 +6,18 @@ class DigitalClock(QWidget):
     def __init__(self):
         super().__init__()
         self.initUI()
+    def initUI(self):
+        self.setWindowTitle('Digital Clock')
+        self.setGeometry(100, 100, 300, 100)
+        layout = QVBoxLayout()
+        self.label = QLabel(self)
+        self.label.setAlignment(Qt.AlignCenter)
+        layout.addWidget(self.label)
+        self.setLayout(layout)
+        timer = QTimer(self)
+        #timer.timeout.connect(self.updateTime)
+        #timer.start(1000)  # Update every second
+        #self.updateTime()  # Initial call to display time immediately
 
 
 
