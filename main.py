@@ -1,6 +1,7 @@
 import sys
 from PyQt5.QtWidgets import QApplication, QMainWindow, QVBoxLayout, QLabel, QWidget
 from PyQt5.QtCore import QTimer ,QDateTime, Qt
+from PyQt5.QtGui import QFont
 
 class DigitalClock(QWidget):
     def __init__(self):
@@ -12,6 +13,8 @@ class DigitalClock(QWidget):
         layout = QVBoxLayout()
         self.label = QLabel(self)
         self.label.setAlignment(Qt.AlignCenter)
+        self.label.setStyleSheet("QLabel { font-family: 'Arial'; font-size: 150px; color: hsl(51, 98%, 50%); }")
+        self.setStyleSheet("background-color: hsl(0, 0%, 10%);")
         layout.addWidget(self.label)
         self.setLayout(layout)
         timer = QTimer(self)
