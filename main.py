@@ -15,9 +15,13 @@ class DigitalClock(QWidget):
         layout.addWidget(self.label)
         self.setLayout(layout)
         timer = QTimer(self)
-        #timer.timeout.connect(self.updateTime)
-        #timer.start(1000)  # Update every second
-        #self.updateTime()  # Initial call to display time immediately
+        timer.timeout.connect(self.updateTime)
+        timer.start(1000)  # Update every second
+        self.updateTime()  # Initial call to display time immediately
+    def updateTime(self):
+        current_time = QDateTime.currentDateTime().toString('hh:mm:ss')
+        self.label.setText(current_time)
+
 
 
 
